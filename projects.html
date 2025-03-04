@@ -9,7 +9,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body class="projects-page">
     <!-- Navbar -->
@@ -22,10 +22,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Início</a>
+                        <a href="index.html" class="nav-link">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/projects">Projetos</a>
+                        <a href="index.html" class="nav-link">Projetos</a>
                     </li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
             {% for project in projects %}
             <div class="carousel-item">
                 <div class="card">
-                    <img src="{{ url_for('static', filename='images/' + project.image) }}" class="card-img-top" alt="{{ project.title }}">
+                    <img src="static/images/{{ project.image }}" class="card-img-top" alt="{{ project.title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title }}</h5>
                         <p class="card-text">{{ project.description }}</p>

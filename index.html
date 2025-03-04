@@ -9,7 +9,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -25,7 +25,7 @@
                         <a class="nav-link" href="/">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/projects">Projetos</a>
+                        <a class="nav-link" href="projects.html">Projetos</a>
                     </li>
                 </ul>
             </div>
@@ -35,7 +35,7 @@
     <!-- Hero Section -->
     <header class="text-white text-center py-5">
         <div class="container">
-            <img src="{{ url_for('static', filename='images/minha_foto.jpg') }}" alt="Minha Foto" class="profile-photo" width="150">
+            <img src="static/images/minha_foto.jpg" alt="Minha Foto" class="profile-photo">
             <h1>Hello World, eu sou o Mateus!</h1>
             <p class="lead">Desenvolvedor Java / Python</p>
         </div>
@@ -57,7 +57,7 @@
                     outras áreas como engenharia de dados.
                 </p>
                 <div class="text-center">
-                    <a href="/projects" class="btn btn-primary btn-lg">
+                    <a href="projects.html" class="btn btn-primary btn-lg">
                         <i class="fas fa-code"></i> Ver Meus Projetos
                     </a>
                 </div>
