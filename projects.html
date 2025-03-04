@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">Meu Portfólio</a>
+            <a class="navbar-brand" href="index.html">Meu Portfólio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,81 +25,105 @@
                         <a href="index.html" class="nav-link">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Projetos</a>
+                        <a href="projects.html" class="nav-link">Projetos</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-<!-- Projects Section -->
-<section class="container my-5">
-    <h2 class="text-center mb-4">Meus Projetos</h2>
-    <div class="carousel-container">
-        <button class="carousel-button left" onclick="prevProject()">❮</button>
-        <div class="carousel">
-            {% for project in projects %}
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="static/images/{{ project.image }}" class="card-img-top" alt="{{ project.title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.title }}</h5>
-                        <p class="card-text">{{ project.description }}</p>
-                        <a href="{{ project.link }}" class="btn btn-primary" target="_blank">
-                            <i class="fab fa-github"></i> Ver no GitHub
-                        </a>
+    <!-- Projects Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Meus Projetos</h2>
+        <div class="carousel-container">
+            <button class="carousel-button left" onclick="prevProject()">❮</button>
+            <div class="carousel">
+                <!-- Projeto 1 -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <img src="static/images/projeto1.jpg" class="card-img-top" alt="Projeto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Projeto 1</h5>
+                            <p class="card-text">Um projeto incrível que fiz usando Python e Flask.</p>
+                            <a href="https://github.com/seu-usuario/repositorio1" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <img src="static/images/projeto2.jpg" class="card-img-top" alt="Projeto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Projeto 2</h5>
+                            <p class="card-text">Um sistema de gerenciamento de tarefas com Django.</p>
+                            <a href="https://github.com/seu-usuario/repositorio2" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <img src="static/images/projeto3.jpg" class="card-img-top" alt="Projeto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Projeto 3</h5>
+                            <p class="card-text">Um site pessoal moderno e responsivo.</p>
+                            <a href="https://github.com/seu-usuario/repositorio3" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            <button class="carousel-button right" onclick="nextProject()">❯</button>
         </div>
-        <button class="carousel-button right" onclick="nextProject()">❯</button>
+    </section>
+
+    <!-- Script para controlar o carrossel -->
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        function showProject(index) {
+            items.forEach((item, i) => {
+                item.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function prevProject() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            showProject(currentIndex);
+        }
+
+        function nextProject() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            showProject(currentIndex);
+        }
+
+        // Mostra o primeiro projeto ao carregar a página
+        showProject(currentIndex);
+    </script>
+
+    <!-- Contatos Fixos -->
+    <div class="fixed-links">
+        <a href="https://www.linkedin.com/in/mateus-barros13/" class="btn btn-primary" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/MateusDBarros" class="btn btn-primary" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
     </div>
-</section>
-
-<!-- Script para controlar o carrossel -->
-<script>
-    let currentIndex = 0;
-    const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
-
-    function showProject(index) {
-        items.forEach((item, i) => {
-            item.style.display = i === index ? 'block' : 'none';
-        });
-    }
-
-    function prevProject() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        showProject(currentIndex);
-    }
-
-    function nextProject() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        showProject(currentIndex);
-    }
-
-    // Mostra o primeiro projeto ao carregar a página
-    showProject(currentIndex);
-</script>
-
-
-    <!-- Contatos -->
-<div class="bottom-links">
-    <a href="https://www.linkedin.com/in/mateus-barros13/" class="btn btn-primary" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://github.com/MateusDBarros" class="btn btn-primary" target="_blank">
-        <i class="fab fa-github"></i> GitHub
-    </a>
-</div>
 
     <!-- Footer -->
-<footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-        <p>&copy; 2025 Mateus de Barros. Todos os direitos reservados.</p>
-    </div>
-</footer>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2025 Mateus de Barros. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -2,12 +2,12 @@
 body {
     font-family: Roboto, sans-serif;
     background-color: #000020; /* Fundo */
-    color: #ffffff; /* Texto  */
+    color: #ffffff; /* Texto */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 body.projects-page {
@@ -20,7 +20,7 @@ body.projects-page {
     padding: 0;
 }
 
-header{
+header {
     padding: 100px 0;
     background: linear-gradient(to bottom, #000000, #000020);
     color: #ffffff;
@@ -40,7 +40,6 @@ header{
     color: #ffffff; /* Texto branco */
     border: 1px solid #161fbb; /* Borda azul */
     margin-bottom: 20px;
-
 }
 
 .card:hover {
@@ -65,7 +64,6 @@ header{
     margin-bottom: 1rem;
 }
 
-
 .btn-primary {
     background-color: #000020; /* Azul */
     border-color: #007bff; /* Azul */
@@ -74,7 +72,7 @@ header{
 
 .btn-primary:hover {
     background-color: #0056b3; /* Azul mais escuro */
-    border-color: #005b3; /* Azul mais escuro */
+    border-color: #0056b3; /* Azul mais escuro */
 }
 
 .rounded-circle {
@@ -123,7 +121,6 @@ header{
     border-color: #0056b3;
 }
 
-
 .btn-lg {
     font-size: 1.25rem;
     padding: 10px 20px;
@@ -139,7 +136,6 @@ header{
     background-color: #0056b3;
     border-color: #0056b3;
 }
-
 
 /* Estilo para o contêiner do carrossel */
 .carousel-container {
@@ -253,8 +249,8 @@ header{
     }
 
     .card-text {
-    font-size: 0.9rem; /* Tamanho da fonte menor */
-}
+        font-size: 0.9rem; /* Tamanho da fonte menor */
+    }
 }
 
 @media (max-width: 768px) {
